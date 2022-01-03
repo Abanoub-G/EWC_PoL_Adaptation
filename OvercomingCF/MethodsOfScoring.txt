@@ -1,0 +1,50 @@
+
+Method A:
+# Evaluation on overall old tasks =====================================================
+temp_diff = original_tasks_acc_threshold - test(retrained_model, device, X_test, Y_test)
+
+if temp_diff > 0:
+	array_of_original_tasks_scores.append(temp_diff)
+else:
+	array_of_original_tasks_scores.append(0)
+
+
+original_tasks_score   = array_of_original_tasks_scores[0]
+accumilted_tasks_score = 100 - test(retrained_model, device, accumilated_retraining_set.test_X, accumilated_retraining_set.test_Y)
+
+# Sum scores
+retraining_score = original_tasks_score + accumilted_tasks_score
+
+
+Method B:
+# Evaluation on per old task =====================================================
+for i in range(10):
+	temp_diff = original_tasks_acc_threshold - test(retrained_model, device, X_test[np.where(Y_test==i)], Y_test[np.where(Y_test==i)])
+	if temp_diff > 0:
+		array_of_original_tasks_scores.append(temp_diff)
+ 	else:
+ 		array_of_original_tasks_scores.append(0)
+
+ 	print("Original task", i," performance = ", test(retrained_model, device, X_test[np.where(Y_test==i)], Y_test[np.where(Y_test==i)]))
+ 	print(" theshold - performance = ", original_tasks_acc_threshold - test(retrained_model, device, X_test[np.where(Y_test==i)], Y_test[np.where(Y_test==i)]))
+ 	print("===")
+ # original_tasks_score   = np.max(array_of_original_tasks_scores)
+ original_tasks_score   = sum(array_of_original_tasks_scores)
+
+if temp_diff > 0:
+	array_of_original_tasks_scores.append(temp_diff)
+else:
+	array_of_original_tasks_scores.append(0)
+
+
+original_tasks_score   = array_of_original_tasks_scores[0]
+accumilted_tasks_score = 100 - test(retrained_model, device, accumilated_retraining_set.test_X, accumilated_retraining_set.test_Y)
+
+# Sum scores
+retraining_score = original_tasks_score + accumilted_tasks_score
+
+
+Method C:
+# Evaluation on per old task =====================================================
+Can duplicat the above two methods with this modfication to them 
+	retraining_score = original_tasks_score + accumilted_tasks_score #* (current_ID + 1)

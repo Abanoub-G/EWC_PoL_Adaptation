@@ -1,0 +1,42 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [2][-]{subsection.1.1}{Related Work}{section.1}% 2
+\BOOKMARK [2][-]{subsection.1.2}{Structure and Contribution of this Paper}{section.1}% 3
+\BOOKMARK [1][-]{section.2}{System Architecture for Assertion-based Monitoring}{}% 4
+\BOOKMARK [2][-]{subsection.2.1}{Simulation Environment}{section.2}% 5
+\BOOKMARK [2][-]{subsection.2.2}{Runtime Monitoring}{section.2}% 6
+\BOOKMARK [2][-]{subsection.2.3}{Geospatial Database for Assertion Checking}{section.2}% 7
+\BOOKMARK [1][-]{section.3}{Methodological Principles for Developing and Applying Assertions}{}% 8
+\BOOKMARK [2][-]{subsection.3.1}{Categories of Assertions}{section.3}% 9
+\BOOKMARK [2][-]{subsection.3.2}{Selecting relevant assertions}{section.3}% 10
+\BOOKMARK [2][-]{subsection.3.3}{Deriving machine-oriented logical assertions from human-oriented Highway Code rules}{section.3}% 11
+\BOOKMARK [3][-]{subsubsection.3.3.1}{Interpretation of Natural Language UKHC Rules}{subsection.3.3}% 12
+\BOOKMARK [3][-]{subsubsection.3.3.2}{Method 1: Direct translation into logic}{subsection.3.3}% 13
+\BOOKMARK [3][-]{subsubsection.3.3.3}{Method 2: Model-based Analysis}{subsection.3.3}% 14
+\BOOKMARK [3][-]{subsubsection.3.3.4}{Geospatial Database for Assertion Checking}{subsection.3.3}% 15
+\BOOKMARK [2][-]{subsection.3.4}{Use of Assertions at Simulation Time}{section.3}% 16
+\BOOKMARK [2][-]{subsection.3.5}{Use of Assertions at Runtime}{section.3}% 17
+\BOOKMARK [1][-]{section.4}{Experimental Case Studies}{}% 18
+\BOOKMARK [2][-]{subsection.4.1}{Experimental Scenario}{section.4}% 19
+\BOOKMARK [2][-]{subsection.4.2}{Simulation case study}{section.4}% 20
+\BOOKMARK [3][-]{subsubsection.4.2.1}{Environment model}{subsection.4.2}% 21
+\BOOKMARK [3][-]{subsubsection.4.2.2}{Overtaking Profiles}{subsection.4.2}% 22
+\BOOKMARK [3][-]{subsubsection.4.2.3}{Simulator system details}{subsection.4.2}% 23
+\BOOKMARK [3][-]{subsubsection.4.2.4}{Simulations}{subsection.4.2}% 24
+\BOOKMARK [3][-]{subsubsection.4.2.5}{Simulation Assertion Checking Results}{subsection.4.2}% 25
+\BOOKMARK [2][-]{subsection.4.3}{Runtime case study}{section.4}% 26
+\BOOKMARK [3][-]{subsubsection.4.3.1}{Danger Space \(DS\) Assessment}{subsection.4.3}% 27
+\BOOKMARK [3][-]{subsubsection.4.3.2}{Video analysis}{subsection.4.3}% 28
+\BOOKMARK [3][-]{subsubsection.4.3.3}{Runtime Validation Results}{subsection.4.3}% 29
+\BOOKMARK [1][-]{section.5}{Discussion}{}% 30
+\BOOKMARK [2][-]{subsection.5.1}{Assertion Checking to measure Performance}{section.5}% 31
+\BOOKMARK [2][-]{subsection.5.2}{The Significance of Agent Intentions during Assertion Checking}{section.5}% 32
+\BOOKMARK [1][-]{section.6}{Conclusion}{}% 33
+\BOOKMARK [2][-]{subsection.6.1}{Future Work}{section.6}% 34
+\BOOKMARK [1][-]{section.7}{Acknowledgments}{}% 35
+\BOOKMARK [1][-]{IEEEbiography.0}{Biographies}{}% 36
+\BOOKMARK [2][-]{IEEEbiography.1}{Chris Harper}{IEEEbiography.0}% 37
+\BOOKMARK [2][-]{IEEEbiography.2}{Greg Chance}{IEEEbiography.0}% 38
+\BOOKMARK [2][-]{IEEEbiography.3}{Abanoub Ghobrial}{IEEEbiography.0}% 39
+\BOOKMARK [2][-]{IEEEbiography.4}{Saquib Alam}{IEEEbiography.0}% 40
+\BOOKMARK [2][-]{IEEEbiography.5}{Tony Pipe}{IEEEbiography.0}% 41
+\BOOKMARK [2][-]{IEEEbiography.6}{Kerstin Eder}{IEEEbiography.0}% 42
