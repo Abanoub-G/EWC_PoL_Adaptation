@@ -1,18 +1,3 @@
-old/Datasets
-old/Technical/output
-old/Technical/videos
-old/Technical/images
-old/Technical/yolo-coco/yolov3.weights
-old/Technical/ObjectDetection/yolo-coco
-
-old/Autoencoder_MNIST/30_times/*
-old/autoencoder/X_normal.csv
-
-old/Autoencoder_MNIST/t10k-images-idx3-ubyte
-old/Autoencoder_MNIST/t10k-labels-idx1-ubyte
-old/Autoencoder_MNIST/train-images-idx3-ubyte
-old/Autoencoder_MNIST/train-labels-idx1-ubyte
-
 OvercomingCF/t10k-images-idx3-ubyte.gz
 OvercomingCF/t10k-labels-idx1-ubyte.gz
 OvercomingCF/train-images-idx3-ubyte.gz
@@ -36,13 +21,5 @@ OvercomingCF/fashion_train-images-idx3-ubyte.gz
 OvercomingCF/fashion_train-labels-idx1-ubyte.gz
 OvercomingCF/fashion_mnist.pkl
 
-OvercomingCF/old/FineTuning/Food-11.zip
-OvercomingCF/old/X_train.npy
-OvercomingCF/old/data/mnist/MNIST/processed/training.pt
-OvercomingCF/old/data/mnist/MNIST/raw/train-images-idx3-ubyte
 
-
-OvercomingCF/old/*
-
-old/*
 
