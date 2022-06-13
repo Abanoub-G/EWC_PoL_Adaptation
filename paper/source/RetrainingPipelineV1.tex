@@ -1,0 +1,55 @@
+\begin{figure}[h!]
+    \begin{tikzpicture}[node distance=3.5cm]
+   
+    \node (original_dataset) [process, minimum width=3.5cm, minimum height=1.75cm, text width=3.3cm, text height=0cm, text depth = 1 cm, yshift=0cm, xshift=0cm, align=left] {Original dataset [$S_0$]};
+    
+    \node (original_dataset_train) [process, minimum width=1.25cm, text width=1.3cm, yshift=-0.25cm, xshift=-0.9cm] {[$S_{0,train}$]};
+    
+    \node (original_dataset_test) [process,  minimum width=1.25cm, text width=1.3cm, yshift=-0.25cm, xshift=0.9cm] {[$S_{0,test}$]};
+    
+    \node (initial_training) [process,  below of=original_dataset , yshift=1.75cm, xshift=0cm] {Initial training};
+    
+    \node (initial_model) [process,  below of=initial_training , yshift=2cm, xshift=0cm] {Initial model $(M_0)$};
+    
+    \node (retraining_method) [process, minimum width=7cm,  below of=initial_model , yshift=2cm, xshift=3.3cm] {Retraining method};
+    
+    \node (latest_model) [process, minimum width=8.6cm,  below of=initial_model , yshift=0.6cm, xshift=2.5cm] {Latest model $(M_{i})$};
+    
+    \node (new_instance) [process,  right of=initial_training, text width=3.3cm, yshift=2.15cm, xshift=1.5cm] {New instance [$S_{i}$]};
+    
+    % \node (oversampling) [process,  below of=new_instance, text width=3.3cm , yshift=2cm, xshift=0cm] {Create a distribution (Oversampling)};
+    
+    \node (PoL_tasks) [process, minimum width=3.5cm, minimum height=1.5cm, text width=3.5cm, text height=0cm, text depth = 0.9 cm, yshift=-1.45cm, xshift=5cm, align=left] {PoL tasks};
+    
+    \node (new_instances_storage) [process,  below of=new_instance, text width=3.3cm , yshift=1.5cm, xshift=0cm] {Accumulated new instances $[S_1,...,S_{i}]$};
+    
+    \node (shuffle) [process, minimum width=3cm, minimum height=1cm, text width=3cm, text height=0.2cm, text depth = 0cm, yshift=-3.0cm, xshift=5cm] {Shuffle};
+    
+      \draw[arrow] (4.1,-3.5) -- node[anchor=east] {$[S_{\text{PoL, }train}]$} (4.1,-4.25);
+      
+     \draw[arrow] (6.1, -3.5) -- node[anchor=east, yshift=0cm] {$[S_{\text{PoL, }test}]$} (6.1,-4.25);
+    
+    \draw [arrow] (original_dataset) -- (initial_training);
+    
+    \draw [arrow] (initial_training) -- (initial_model);
+    
+    \draw[arrow] (-0.75,-3.75) -- node[anchor=east] {$i=0$} (-0.75,-5.65);
+    
+    \draw[arrow] (0.75,-3.75) -- (0.75,-4.25);
+    
+    \draw[arrow] (3.3,-5.25) -- node[anchor=east] {$i>0$} (3.3,-5.65);
+    
+    % \draw [arrow] (original_dataset_test) -| node[anchor=south] {$S_{0,test}$} (2.5,-4.25);
+    
+    \draw [arrow] (original_dataset_test) -| (2.1,-4.25);
+    
+    \draw [arrow] (new_instance) -- (new_instances_storage);
+    
+    % \draw [arrow] (oversampling) -- (new_instances_storage);
+    
+    \draw [arrow] (new_instances_storage) -- (5,-2.5);
+
+    \end{tikzpicture}
+\caption{Retraining Pipeline}
+\label{fig:retraining_pipeline2}
+\end{figure}

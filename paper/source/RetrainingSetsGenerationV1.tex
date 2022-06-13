@@ -1,0 +1,91 @@
+\begin{figure*}[h!]
+    \begin{tikzpicture}[node distance=3.5cm]
+   
+    \node (mnist_dataset) [process, minimum width=3.5cm, minimum height=1.4cm, text width=3.3cm, text height=0cm, text depth = 0.7cm, yshift=0cm, xshift=0cm, align=left] {MNIST dataset};
+    
+    \node (new_tasks_train) [process, minimum width=1.25cm, minimum height=0.7cm, text width=1.3cm, yshift=-0.2cm, xshift=-0.9cm] {[$S_{0,train}$]};
+    
+    \node (new_tasks_test) [process, minimum width=1.25cm, minimum height=0.7cm, text width=1.3cm, yshift=-0.2cm, xshift=0.9cm] {[$S_{0,test}$]};
+    
+    % \node (original_dataset) [process, minimum width=3.5cm, minimum height=1.75cm, text width=2.3cm, text height=0cm, text depth = 0 cm, yshift=0cm, xshift=5cm, align=left] {Original dataset};
+    
+    % \node (new_tasks_train) [process, minimum width=1.25cm, minimum height=0.7cm, text width=1.3cm, yshift=-0.5cm, xshift=9cm] {[$S_{0,train}$]};
+    
+    % \node (new_tasks_test) [process, minimum width=1.25cm, minimum height=0.7cm, text width=1.3cm, yshift=0.5cm, xshift=9cm] {[$S_{0,test}$]};
+    
+    \node (nmnist_dataset) [process, minimum width=3.5cm, minimum height=4cm, text width=3.3cm, text height=0cm, text depth = 3.3cm, yshift=-3.2cm, xshift=0cm, align=left] {N-MNIST dataset};
+    
+    \node (noisy1) [process, minimum width=3cm, minimum height=0.7cm, text width=3cm, yshift=-2.2cm, xshift=0cm] {Noisy dataset 1 (Gaussian noise)};
+    
+     \node (noisy2) [process, minimum width=3cm, minimum height=0.7cm, text width=3cm, yshift=-3.4cm, xshift=0cm] {Noisy dataset 2  (Blur noise)};
+     
+     \node (noisy3) [process, minimum width=3cm, minimum height=0.7cm, text width=3cm, yshift=-4.6cm, xshift=0cm] {Noisy dataset 3 (Contrast noise)};
+    
+    % \node (noisy2) [process, minimum width=3cm, minimum height=0.7cm, text width=3cm, yshift=-3.4cm, xshift=0cm] {Noisy dataset 1 (Blur noise)};
+    
+    % \node (new_tasks_test) [process, minimum width=1.25cm, minimum height=0.7cm, text width=1.3cm, yshift=-4cm, xshift=0.9cm] {[$S_{0,test}$]};
+    
+     \node (retraining_sets_generator) [process, minimum width=12cm, minimum height=4cm, text width=12cm, text height=3.7cm, text depth = 0cm, yshift=-3.2cm, xshift=9cm, align=left] {Retraining sets generator};
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \node (random_instances) [process, minimum width=3cm, minimum height=3.3cm, text height=3cm, text depth = 0cm, yshift=-3cm, xshift=4.5cm, align=left] {Random instances};
+    
+     \node (i_1) [process, minimum width=1cm, minimum height=0.8cm, yshift=-2cm, xshift=3.7cm] {};
+     
+     \node (i_2) [process, minimum width=1cm, minimum height=0.8cm, yshift=-2.3cm, xshift=4cm] {};
+     
+     \node (i_3) [process, minimum width=1cm, minimum height=0.8cm, yshift=-2.6cm, xshift=4.3cm] {};
+     
+     \node (i_4) [process, minimum width=1cm, minimum height=0.8cm, yshift=-2.9cm, xshift=4.6cm] {};
+     
+     \node (i_5) [process, minimum width=1cm, minimum height=0.8cm, yshift=-3.1cm, xshift=4.9cm] {};
+     
+     \node (i_6) [process, minimum width=1cm, minimum height=0.8cm, yshift=-3.4cm, xshift=5.2cm] {};
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%     
+     \node (oversampling) [process, minimum width=8cm, minimum height=3.3cm, text width = 8cm, text height=3cm, text depth = 0cm, yshift=-3cm, xshift=10.8cm, align=left] {Oversampling (small rotation + shift)};
+    
+     \node (ii_1) [process, minimum width=1cm, minimum height=0.8cm, yshift=-2cm, xshift=8.2cm] {};
+     
+     \node (ii_2) [process, minimum width=1cm, minimum height=0.8cm, yshift=-2.3cm, xshift=8.5cm] {};
+     
+     \node (ii_3) [process, minimum width=1cm, minimum height=0.8cm, yshift=-2.6cm, xshift=8.8cm] {};
+     
+     \node (ii_4) [process, minimum width=1cm, minimum height=0.8cm, yshift=-2.9cm, xshift=9.1cm] {};
+     
+     \node (ii_5) [process, minimum width=1cm, minimum height=0.8cm, yshift=-3.1cm, xshift=9.4cm] {};
+     
+     \node (ii_6) [process, minimum width=1cm, minimum height=0.8cm, yshift=-3.4cm, xshift=9.7cm] {};
+     
+     \node[label={[label distance=0.5cm,text depth=-1ex,rotate=0]right:. . .}] at (10,-2.7) {};
+     
+     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+     \node (iii_1) [process, minimum width=1cm, minimum height=0.8cm, yshift=-2cm, xshift=12.2cm] {};
+     
+     \node (iii_2) [process, minimum width=1cm, minimum height=0.8cm, yshift=-2.3cm, xshift=12.5cm] {};
+     
+     \node (iii_3) [process, minimum width=1cm, minimum height=0.8cm, yshift=-2.6cm, xshift=12.8cm] {};
+     
+     \node (iii_4) [process, minimum width=1cm, minimum height=0.8cm, yshift=-2.9cm, xshift=13.1cm] {};
+     
+     \node (iii_5) [process, minimum width=1cm, minimum height=0.8cm, yshift=-3.1cm, xshift=13.4cm] {};
+     
+     \node (iii_6) [process, minimum width=1cm, minimum height=0.8cm, yshift=-3.4cm, xshift=13.7cm] {};
+     
+    %  \node (i_7) [process, minimum width=1cm, minimum height=0.8cm, yshift=-4.0cm, xshift=5.8cm] {};
+     
+    %  \node (noisy3) [process, minimum width=3cm, minimum height=0.7cm, text width=3cm, yshift=-4.6cm, xshift=0cm] {Noisy dataset 3 (Contrast noise)};
+   
+    
+    \draw[arrow] (7.5,-4) -- node[anchor=east] {} (7.5,-1.5);
+    \node[label={[label distance=0.5cm,text depth=-1ex,rotate=90]right:Oversamples}] at (7,-4.2) {};
+    
+    \draw[arrow] (7.5,-4) -- node[anchor=north] {} (14,-4);
+    \node[label={[label distance=0.5cm,text depth=-1ex,rotate=0]right:New instance}] at (12,-4.2) {};
+  
+    \node (retraining_sets) [process, minimum width=1.5cm, minimum height=0.7cm, text width=1.5cm, yshift=-3.2cm, xshift=15.15cm] {Retraining sets};
+    
+    \end{tikzpicture}
+\caption{Retraining sets generation}
+\label{fig:retraining_sets}
+\end{figure*}

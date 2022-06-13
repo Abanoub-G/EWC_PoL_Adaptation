@@ -1,8 +1,14 @@
 \RequirePackage{etex} %% **************** add this for ARXIV submission
 \documentclass[runningheads,twocolumn,a4paper,10pt]{llncs}
-\usepackage[maxnames=6,firstinits=true,doi=false,url=true,isbn=false]{biblatex}
-\addbibresource{../source/assertion.bib}
 % \documentclass[runningheads,a4paper]{llncs}
+% \usepackage{threeparttable}
+% \usepackage{hyperref}
+% \usepackage[colorlinks,citecolor=blue]{hyperref}
+% \usepackage{draftwatermark}
+% \usepackage[maxnames=3,firstinits=true,sorting=none,doi=false,url=true,isbn=false]{biblatex}
+% \usepackage[maxnames=6,firstinits=true,doi=false,url=true,isbn=false]{biblatex}
+% \addbibresource{../source/refs.bib}
+
 \usepackage{etex}
 \reserveinserts{28}
 \pdfoutput=1
@@ -26,12 +32,16 @@
 \usepackage{listings}
 \usepackage{graphicx}
 \usepackage{amsmath}
+\usepackage{caption}
+\usepackage{subcaption}
 \usepackage[font=footnotesize,labelfont=bf]{subcaption}
 \usepackage[hidelinks]{hyperref}
 \usepackage[capitalize]{cleveref}
 \captionsetup{compatibility=false}
 \usepackage{tikz}
 \usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\pgfplotsset{plot coordinates/math parser=false}
 \usepackage[para,online,flushleft]{threeparttable}
 \usepackage{wasysym}
 \usepackage{amssymb}
@@ -49,40 +59,65 @@
 \usepackage{siunitx}
 \usepackage{xurl} %for long URLs
 \usepackage[shortlabels]{enumitem}
+\usepackage{soul}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{xcolor,listings}
+\usepackage{relsize}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
 
 % for caption at top of table
 \usepackage{float}
 \floatstyle{plaintop}
 \restylefloat{table}
 \setcounter{secnumdepth}{3}
+\lstset{upquote=true}
+
+% Packages for drawing
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows,calc}
+\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm,text centered, draw=black, fill=none]
+\tikzstyle{io} = [trapezium, trapezium left angle=70, trapezium right angle=110, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=blue!30]
+\tikzstyle{process} = [rectangle, minimum width=3.5cm, minimum height=1cm, text centered, draw=black, fill=orange!0]
+\tikzstyle{neuron} = [circle, minimum size=3cm, text centered, draw=black, fill=orange!0]
+\tikzstyle{decision} = [diamond, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=green!30]
+\tikzstyle{arrow} = [thick,->,>=stealth]
+
+
+\usepackage[maxnames=6,firstinits=true,doi=false,url=true,isbn=false]{biblatex}
+\addbibresource{../source/refs.bib}
+
+\def \assumptionSGDfirst {1}
+\def \assumptionEWCfirst {2}
+\def \assumptionEWCsecond {3}
+
+\pagenumbering{arabic}
 
 
 \begin{document} 
 
-\title{Safety Validation of Autonomous Vehicles using Assertion-based Oracles}
-\titlerunning{Safety Validation of Autonomous Vehicles... }
-\authorrunning{Harper, Chance, Ghobrial et al.}
+\title{Operational Adaptation of DNN Classifiers using Elastic Weight Consolidation}
+\titlerunning{Operational Adaptation of DNN Classifiers...}
+\authorrunning{Ghobrial et al.}
 
-\author{Christopher Harper\inst{1}, Greg Chance\inst{2}, Abanoub Ghobrial\inst{2}, Saquib Alam\inst{1}, S\'everin Lemaignan\inst{1}\todo[inline]{Are we including SL?}, Tony Pipe\inst{1}, Kerstin Eder\inst{2}}
+\author{Abanoub Ghobrial\inst{1}, Xuan Zheng\inst{1}, Darryl Hond\inst{2}, Hamid Asgari\inst{2}, Kerstin Eder\inst{1}}
 
-\institute{University of the West of England, Bristol, UK \and University of Bristol, Bristol, UK}
+\institute{University of Bristol, Bristol, UK \and Thales, Reading, UK}
 \tocauthor{Authors' Instructions}
 
 \maketitle
 \let\thefootnote\relax\footnotetext{
-\textit{Statements about authorship contribution.}
-Christopher Harper (e-mail: chris.harper@brl.ac.uk),
-Saquib Alam (e-mail:saquib764@gmail.com), 
-S\'everin Lemaignan (e-mail: severin.lemaignan@brl.ac.uk)
-and
-Tony Pipe (e-mail: tony.pipe@brl.ac.uk), 
-are with the University of the West of England, Frenchay, Coldharbour Ln, Bristol, BS34 8QZ, United Kingdom.
-%
-Greg Chance (e-mail: greg.chance@bristol.ac.uk), 
+% \textit{Statements about authorship contribution.}
 Abanoub Ghobrial (e-mail: abanoub.ghobrial@bristol.ac.uk), 
+Xuan Zheng (e-mail: dq18619@bristol.ac.uk), 
 and 
 Kerstin Eder (e-mail: kerstin.eder@bristol.ac.uk) 
-are with the Trustworthy Systems Lab, Department of Computer Science, University of Bristol, Merchant Ventures Building, Woodland Road,  Bristol, BS8 1UQ, United Kingdom. }
+are with the Trustworthy Systems Lab, Department of Computer Science, University of Bristol, Merchant Ventures Building, Woodland Road, Bristol, BS8 1UB, United Kingdom. 
+%
+Darryl Hond (e-mail: darryl.hond@uk.thalesgroup.com),
+and
+Hamid Asgari (e-mail: hamid.asgari@uk.thalesgroup.com) 
+are with Technology and Innovation Research,Thales, Reading, United Kingdom.}
 
 %
 \makeatletter
@@ -99,7 +134,7 @@ are with the Trustworthy Systems Lab, Department of Computer Science, University
 %  Main Body
 % ***************************************************
 \input{../source/body.tex}
-\balance
+% \balance
 
 % ***************************************************
 %  Bib
@@ -109,7 +144,6 @@ are with the Trustworthy Systems Lab, Department of Computer Science, University
 % ***************************************************
 %  Appendix
 % ***************************************************
-\input{../source/appendix.tex}
 
 \end{document}
 % \grid

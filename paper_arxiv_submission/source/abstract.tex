@@ -1,0 +1,21 @@
+Autonomous systems (AS) often use Deep Neural Network (DNN) classifiers to allow them to operate in complex, high dimensional, non-linear, and dynamically changing environments.
+%
+Due to the complexity of these environments, DNN classifiers may output misclassifications as they experience tasks in their operational environments, that were not identified during development.
+%
+Removing a system from operation and retraining it to include these new tasks 
+% is an expensive process and 
+becomes economically infeasible as the number of such ASs increases. 
+%
+Additionally, such misclassifications may cause financial loss and safety threats to the AS or to other operators in the environment.
+%
+In this paper, we propose to reduce such threats by investigating how DNN classifiers can adapt their knowledge to learn new information in the AS's operational environment, using only a limited number of observations encountered sequentially during operation. 
+%
+This allows the AS to adapt to newly encountered information, increasing the AS's classification accuracy and hence its overall reliability. % in its operational environment.
+%
+However, retraining DNNs on different observations than used in prior training is known to cause catastrophic forgetting or significant model drift. 
+%
+We investigate how this problem can be controlled by using Elastic Weight Consolidation (EWC) whilst learning from limited new observations. %
+%
+We carry out experiments using original and noisy versions of the MNIST dataset to represent known and new information to DNN classifiers.
+%
+Results show that using EWC is effective in controlling the process of adaptation to new information, and thus allows for reliable adaption of ASs to new information in their operational environment.

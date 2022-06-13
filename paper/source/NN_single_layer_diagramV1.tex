@@ -1,0 +1,35 @@
+\begin{figure}[h!]
+    \begin{tikzpicture}[node distance=3.5cm]
+ 
+        % \node (neuron1) [neuron, fill=none, minimum size=2cm, xshift=3.8cm] {$ReLU \Bigg( \mathlarger{\mathlarger{\sum}}_{k=0}^{K} (x_{k,z-1}.w_{x_k,z-1})+b_{k,z})\Bigg)$};
+        
+        \node (neuron1) [neuron, fill=none, minimum size=2cm, xshift=3.8cm] {$ReLU \Bigg( \mathlarger{\mathlarger{\sum}}_{k=1}^{K} (x_{k}.w_{k})+b\Bigg)$};
+        
+        %  \node (activation) [process, draw=white, minimum width=4cm, minimum height=2cm, text width=8cm, text height=5cm, text depth = 0 cm, yshift=0cm, xshift=0cm, align=left] {$ReLU(x_{k,z})$};
+         
+        %  \node (activation) [process, fill=none, minimum width=2cm, minimum height=1cm, yshift=0cm, xshift=7cm, align=center] {{$ReLU(x_{k,z})$}};
+    
+    
+         \draw[arrow] (-0.3,2) -- node[anchor=south, xshift=-0.9cm, yshift =0.3cm] {$x_{1}$} node[anchor=south, yshift =0cm] {$w_{1}$} (1.1,1.3);
+         
+         \draw[arrow] (-0.3,1) -- node[anchor=south, xshift=-0.9cm, yshift =0.1cm] {$x_{2}$} node[anchor=south, yshift =0cm] {$w_{2}$} (0.9,0.7);
+         
+         \draw[arrow] (-0.3,0) -- node[anchor=south, xshift=-0.9cm, yshift =-0.3cm] {$x_{3}$} node[anchor=south, yshift =0cm] {$w_{3}$} (0.8,0);
+         
+         \draw[arrow] (-0.3,-1.5) -- node[anchor=south, xshift=-0.9cm, yshift =-0.6cm] {$x_{K}$} node[anchor=south, yshift =0cm] {$w_{K}$} node[anchor=south,xshift=-0.8cm,yshift =0.5cm] {$.$} node[anchor=south,xshift=-0.8cm,yshift =0.3cm] {$.$} node[anchor=south,xshift=-0.8cm,yshift =0.1cm] {$.$}  (1,-1.1);
+         
+        % \draw[arrow] (0,1.5) -- node[anchor=south, xshift=-1.3cm, yshift =0.3cm] {$x_{1,}$} node[anchor=south, yshift =0cm] {$w_1$} (2.2,0.6);
+         
+        %  \draw[arrow] (0,0.75) -- node[anchor=south, xshift=-1.3cm, yshift =0.1cm] {$x_2$} node[anchor=south, yshift =0cm] {$w_2$} (2.1,0.3);
+         
+        %  \draw[arrow] (0,0) -- node[anchor=south, xshift=-1.3cm, yshift =-0.3cm] {$x_3$} node[anchor=south, yshift =0cm] {$w_3$} (2.05,0); 
+        
+        %  \draw[arrow] (0,-1.5) -- node[anchor=south, xshift=-1.2cm, yshift =-0.9cm] {$x_K$} node[anchor=south, yshift =0cm] {$w_K$} node[anchor=south,xshift=-1.2cm,yshift =0.3cm] {$.$} node[anchor=south,xshift=-1.2cm,yshift =0.1cm] {$.$} node[anchor=south,xshift=-1.2cm,yshift =-0.1cm] {$.$} %(2.25,-0.6);
+        
+         
+        \draw[arrow] (6.85,0) -- node[anchor=south] {$x_{out}$} (7.5,0);
+        
+    \end{tikzpicture}
+\caption{Artificial neuron in a DNN}
+\label{fig:neuron_connected}
+\end{figure}

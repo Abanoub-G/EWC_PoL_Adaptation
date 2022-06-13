@@ -1,0 +1,60 @@
+\begin{figure}[h!]
+    \begin{tikzpicture}[node distance=3.5cm]
+   
+    % \node (retraining_method) [process, minimum width=7cm, minimum height=10cm, text width=7cm, text height=10cm, text depth = 0 cm, yshift=0cm, xshift=0cm, align=left] {Retraining method};
+    % \node (retraining_method) [process, fill=none, minimum width=4cm, minimum height=5cm, text width=8.4cm, text height=9cm, text depth = 0cm, yshift=-2.4cm, xshift=0cm, align=left] {Retraining method};
+    
+    \node (training_word) [process, draw=white, minimum width=4cm, minimum height=2cm, text width=8cm, text height=5cm, text depth = 0 cm, yshift=0cm, xshift=0cm, align=left] {Training};
+    
+    \node (training) [process, fill=none, minimum width=4cm, minimum height=2cm, text width=6cm, text height=0cm, text depth = 3cm, yshift=-1cm, xshift=-1cm, align=left] {\[\mathcal{L}(\theta) = \mathcal{L}_{\text{PoL}}(\theta) + \sum_{j}^{}\dfrac{\lambda_i}{2} F_0(\theta_j - \theta^{*}_{old,j})^2\]\\ \[\theta_{new} = \theta_{old} - \eta_{i} \dfrac{d\mathcal{L}(\theta)}{d\theta}\]};
+    
+    % \node (shuffle) [process, minimum width=3cm, minimum height=1cm, text width=3cm, text height=0.2cm, text depth = 0cm, yshift=2cm, xshift=2cm] {Shuffle};
+    
+    \node (change_parameters) [process, minimum width=3cm, minimum height=1.5cm, text width=3cm, text height=0cm, text depth = 0.1cm, yshift=-3.7cm, xshift=0.5cm] {Change tuning parameters ($\lambda_i$, $\eta_i$)};
+    
+    \node (criteria_assessment) [process, minimum width=8cm, minimum height=1.5cm, text width=8cm, text height=0.2cm, text depth = 0 cm, yshift=-6cm, xshift=0cm] {Criteria assessment};
+    
+    \draw[arrow] (-3,1.5) -- node[anchor=east,yshift=0.2cm] {$M_0$} (-3,0.6);
+    
+    \draw[arrow] (-3,-2.61) -- node[anchor=east] {$M_i$} (-3,-5.25);
+    
+    \draw[arrow] (0.5,-5.25) -- node[anchor=east,xshift=1.3cm,yshift =-0.6cm] {(if not satisfied)} (0.5,-4.45);
+    \draw[arrow] (0.5,-2.95) -- node[anchor=east] {} (0.5,-2.61);
+    
+    % \draw[arrow] (2,3.5) -- node[anchor=east] {$[S_1,...,S_{i}]$} (2,2.5);
+    
+    % \draw[arrow] (0.9,1.5) -- node[anchor=east] {$[S_{(1,...,i),train}]$} (0.9,0.6);
+    %  \draw[arrow] (3.1,1.5) -- node[anchor=east, yshift=2.92cm] {$[S_{(1,...,i),test}]$} (3.1,-5.25);
+    
+      \draw[arrow] (0.7,1.5) -- node[anchor=east, yshift=0.2cm] {$[S_{\text{PoL, }train}]$} (0.7,0.6);
+      
+     \draw[arrow] (2.4,1.5) -- node[anchor=east, yshift=3.1cm] {$[S_{\text{PoL, }test}]$} (2.4,-5.25);
+    
+     \draw[arrow] (3.8,1.5) -- node[anchor=east, yshift=3.1cm] {$[S_{0,test}]$} (3.8,-5.25);
+     
+     \draw[arrow] (0,-6.75) -- node[anchor=east,yshift =-0.5cm] {$M_i$} (0,-8);
+     \draw[arrow] (0,-6.75) -- node[anchor=east,xshift=1cm,yshift =0.8cm] {(if satisfied)} (0,-8);
+    
+    
+    % \node (training) [process, fill=none, minimum width=4cm, minimum height=5cm, text width=6cm, text height=0cm, text depth = 2cm, yshift=0cm, xshift=0cm, align=left] {\[\mathcal{L}(\theta) = \mathcal{L}_{new}(\theta) + \sum_{j}^{}\dfrac{\lambda_i}{2} F_0(\theta_j - \theta^{*}_{old,j})^2\]\\ \[\theta_{new} = \theta_{old} - lr_{i} \dfrac{d\mathcal{L}(\theta)}{d\theta}\]};
+    
+    % \node (assessment_criteria) [process, minimum width=1.5cm, minimum height=5cm, text width=1.7cm, text height=0cm, text depth = 0 cm, yshift=0cm, xshift=2.5cm] {Assessment criteria};
+    % draw=black
+    % \draw [arrow] (-4.5,0) --  node[anchor=south] {$[S_{0,test}]$} (-4,0);
+    
+    % \node (original_dataset_train) [process, minimum width=1.25cm, text width=1.3cm, yshift=-0.25cm, xshift=-0.9cm] {[$S_{0,train}$]};
+    
+    % \mathcal{L}(\theta) = \mathcal{L}_{B}(\theta) +  \sum_{i}^{} \frac{\lambda}{2} F^A_i (\theta_i - \theta^{*}_{A,i})^2
+    
+    % \draw [arrow] (initial_training) -- (initial_model);
+    
+    % \draw[arrow] (-0.75,-3.75) -- node[anchor=east] {$i=0$} (-0.75,-5.65);
+    % \[ \sum_{n=1}^{\infty} 2^{-n} = 1 \]
+    % \[\sum_{t=0}^{n}\dfrac{CF_t}{(1+r)^t}\]
+    % $\mathcal{L}(\theta) = \mathcal{L}_{new}(\theta) + \sum{j}{}\lambda_i F_0(\theta_j - \theta^{*}_{old,j})^2$
+    
+    \node (retraining_method) [process, fill=none, minimum width=4cm, minimum height=5cm, text width=8.4cm, text height=8.0cm, text depth = 0cm, yshift=-3.2cm, xshift=0cm, align=left] {Retraining method};
+    \end{tikzpicture}
+\caption{Retraining Method}
+\label{fig:retraining_method2}
+\end{figure}

@@ -21,5 +21,32 @@ OvercomingCF/fashion_train-images-idx3-ubyte.gz
 OvercomingCF/fashion_train-labels-idx1-ubyte.gz
 OvercomingCF/fashion_mnist.pkl
 
+paper/arxiv/pol_ewc_arxiv.aux
+paper/arxiv/pol_ewc_arxiv.bbl
+paper/arxiv/pol_ewc_arxiv.bcf
+paper/arxiv/pol_ewc_arxiv.blg
+paper/arxiv/pol_ewc_arxiv.fdb_latexmk
+paper/arxiv/pol_ewc_arxiv.fls
+paper/arxiv/pol_ewc_arxiv.log
+paper/arxiv/pol_ewc_arxiv.out
+paper/arxiv/pol_ewc_arxiv.run.xml
+paper/arxiv/pol_ewc_arxiv.synctex.gz
+paper/arxiv/pol_ewc_arxiv.pdf
+
+paper/ieee_trans/ewc_pol_ieeetrans.aux
+paper/ieee_trans/ewc_pol_ieeetrans.bbl
+paper/ieee_trans/ewc_pol_ieeetrans.bcf
+paper/ieee_trans/ewc_pol_ieeetrans.blg
+paper/ieee_trans/ewc_pol_ieeetrans.fdb_latexmk
+paper/ieee_trans/ewc_pol_ieeetrans.fls
+paper/ieee_trans/ewc_pol_ieeetrans.log
+paper/ieee_trans/ewc_pol_ieeetrans.out
+paper/ieee_trans/ewc_pol_ieeetrans.pdf
+paper/ieee_trans/ewc_pol_ieeetrans.run.xml
+paper/ieee_trans/ewc_pol_ieeetrans.synctex.gz
+paper/ieee_trans/asr_ieeetrans.pdf
+
+
+
 
 
