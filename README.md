@@ -57,12 +57,11 @@ Skip this step if you already have your nvidia dirvers installed.
 
 ### Install docker and nvidia-docker
 Link to refer to if needed: https://docs.docker.com/engine/install/ubuntu/.
-1. Uninstall old versions:
-- `sudo apt-get remove docker docker-engine docker.io containerd runc`
+1. Uninstall old versions: `sudo apt-get remove docker docker-engine docker.io containerd runc`
 
 2. Set up the repository: 
 - Update the apt package index and install packages to allow apt to use a repository over HTTPS: 
-`
+```
 sudo apt-get update
 sudo apt-get install \
     apt-transport-https \
@@ -70,14 +69,16 @@ sudo apt-get install \
     curl \
     gnupg \
     lsb-release 
-` 
+```
 
 - Add Docker’s official GPG key: `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg`
 
 - Use the following command to set up the stable repository: 
-`echo \
+```
+echo \
   "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
   $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null`
+```
 
 ### Install Pytorch
 
