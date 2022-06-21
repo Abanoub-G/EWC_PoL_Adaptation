@@ -100,16 +100,19 @@ id -nG
 ```
 
 4. Install NVIDIA Docker (run in terminal the following commands):
-- `curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey |   sudo apt-key add -`
-- `distribution=$(. /etc/os-release;echo $ID$VERSION_ID)`
+```
+curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey |   sudo apt-key add -`
 
-- `curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list`
+distribution=$(. /etc/os-release;echo $ID$VERSION_ID)`
 
-- `sudo apt-get update`
+curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list`
 
-- `sudo apt-get install nvidia-docker2`
+sudo apt-get update`
 
-- `sudo pkill -SIGHUP dockerd`
+sudo apt-get install nvidia-docker2`
+
+sudo pkill -SIGHUP dockerd`
+```
 
 5. Test environment and to make sure everything is installed correctly: `sudo docker run --runtime=nvidia --rm nvidia/cuda:11.0-base nvidia-smi`
 
