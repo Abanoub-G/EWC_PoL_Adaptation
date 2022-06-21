@@ -80,6 +80,38 @@ echo \
   "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
   $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null`
 ```
+3. Install Docker Engine:
+- Update the apt package index, and install the latest version of Docker Engine and containerd, or go to the next step to install a specific version: 
+```
+sudo apt-get update
+
+sudo apt-get install docker-ce docker-ce-cli containerd.io
+```
+
+- Verify that Docker Engine is installed correctly by running the hello-world image: `sudo docker run hello-world`
+
+- Ensure Docker can run without sudo (if `$USER` below doesn't work just replace it with your username):
+```
+sudo usermod -aG docker $USER
+
+su - $USER
+
+id -nG
+```
+
+4. Install NVIDIA Docker (run in terminal the following commands):
+- `curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey |   sudo apt-key add -`
+- `distribution=$(. /etc/os-release;echo $ID$VERSION_ID)`
+
+- `curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list`
+
+- `sudo apt-get update`
+
+- `sudo apt-get install nvidia-docker2`
+
+- `sudo pkill -SIGHUP dockerd`
+
+5. Test environment and to make sure everything is installed correctly: `sudo docker run --runtime=nvidia --rm nvidia/cuda:11.0-base nvidia-smi`
 
 ### Install Pytorch
 
