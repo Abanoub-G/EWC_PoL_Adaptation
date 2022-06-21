@@ -142,5 +142,5 @@ Now your machine should be setup to run the operational adaptation.
 
 2. Go to the OvercomingCF folder `cd OvercomingCF`
 
-3. Run `python3 ContinualRetrainingV7_HyperOpt.py`. This will automatically download the datasets used in the experiment if the don't already exist and will run the experiments.
+3. Run `python3 ContinualRetrainingV7_HyperOpt.py`. This will automatically download the datasets used in the experiment (if they don't already exist) and will run the experiments.
  
