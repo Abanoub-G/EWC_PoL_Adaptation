@@ -8,7 +8,7 @@ The latest code available is in OvercomingCF/ContinualRetrainingV7_HyperOpt.py
 
 This work was carried out on a computer with an i7-10750H with 16GB RAM and an NVIDIA GeForce RTX 3060 graphics card, running Ubuntu 20.04.02 LTS.
 
-## Setup
+## Machine Setup
 ### Instal nvidia dirvers 
 Skip this step if you already have your nvidia dirvers installed. 
 
@@ -116,8 +116,31 @@ sudo pkill -SIGHUP dockerd`
 
 5. Test environment and to make sure everything is installed correctly: `sudo docker run --runtime=nvidia --rm nvidia/cuda:11.0-base nvidia-smi`
 
-### Install Pytorch
+### Instal Pytorch docker and setup working container
+1. Download Pytorch (may take a few minutes), in terminal run `docker pull pytorch/pytorch:latest`.
 
-### Download datasets
+2. Create a docker container from the pytorch image, start it and have a docker volume with it: `docker run -t --runtime=nvidia -d --name [container name] -v [path on host]:[path on container] -p 5000:80 [Image name]`. For example: `docker run -t --runtime=nvidia -d --name Operation_Adaptation_DNN_EWC -v ~/gits:/home -p 5000:80 pytorch/pytorch:latest`
+- Useful link on volumes: https://www.digitalocean.com/community/tutorials/how-to-share-data-between-the-docker-container-and-the-host
 
-### Run 
+3. Work on docker container through terminal: `docker exec -it [container name] bash`. For example `docker exec -it Operation_Adaptation_DNN_EWC bash`
+
+
+Now your machine should be setup to run the operational adaptation.
+
+## Run Operational Adaptation experiments
+### Clone this repositry 
+1. Open a new terminal 
+
+2. Make new directory called gits: `mkdir ~/gits` 
+
+3. Enter this directory: `cd ~/gits/`
+
+4. Clone this repository: `git clone https://github.com/Abanoub-G/EWC_PoL_Adaptation.git`
+
+### Run experiments  
+1. Inside the docker container created earlier navigate to where the repository file is.
+
+2. Go to the OvercomingCF folder `cd OvercomingCF`
+
+3. Run `python3 ContinualRetrainingV7_HyperOpt.py`. This will automatically download the datasets used in the experiment if the don't already exist and will run the experiments.
+ 

@@ -7,6 +7,9 @@ OvercomingCF/mnist.pkl
 OvercomingCF/X_train.npy
 OvercomingCF/Y_train.npy
 OvercomingCF/FineTuning/
+OvercomingCF/data/
+OvercomingCF/__pycache__/
+OvercomingCF/scripts/__pycache__/
 
 OvercomingCF/mnist-with-awgn.gz
 OvercomingCF/mnist-with-awgn.mat
